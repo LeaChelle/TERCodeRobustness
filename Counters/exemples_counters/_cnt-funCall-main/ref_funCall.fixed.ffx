@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<flowfacts xmlns:xi="http://www.w3.org/2001/XInclude" xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+
+
+	<function label="main"> <!-- 0x000082ec (ref_funCall.c:121) -->
+		<loop label="main" offset="0x40" maxcount="NOCOMP"> <!-- 0x0000832c (ref_funCall.c:138) -->
+		</loop>
+		<loop label="main" offset="0x7c" maxcount="NOCOMP"> <!-- 0x00008368 (ref_funCall.c:147) -->
+		</loop>
+	</function>
+
+</flowfacts>

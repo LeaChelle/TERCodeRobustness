@@ -1,0 +1,12 @@
+ADDRESS		NUM	SIZE	TIME	COUNT	RATIO		FUNCTION	LINE
+000082ec	1	40	18	0	-0%	main	ref_funCall.c:121,134,135,137,138
+0000832c	2	12	7	0	-0%	main	ref_funCall.c:138
+00008338	3	20	9	0	-0%	main	ref_funCall.c:144,146,147
+00008314	4	24	14	0	-0%	main	ref_funCall.c:140,141
+00008368	5	12	7	0	-0%	main	ref_funCall.c:147
+00008374	6	12	5	0	-0%	main	ref_funCall.c:152
+0000834c	7	28	17	0	-0%	main	ref_funCall.c:149,150
+00008380	8	20	9	0	-0%	main	ref_funCall.c:154,156
+00008394	9	16	10	0	-0%	main	ref_funCall.c:163,165
+000083a4	10	36	17	0	-0%	main	ref_funCall.c:172,177,182,184
+TOTAL FUNCTION		0	0	-0%		main

@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cfg-collection>
+  <cfg id="_0" address="_0" label="main" number="0">
+    <property identifier="otawa::INDEX">0</property>
+    <property identifier="otawa::LABEL">main</property>
+    <entry id="_0-0"/>
+    <bb id="_0-1" address="000082ec" size="40" number="1">
+      <property identifier="otawa::INDEX">1</property>
+      <property identifier="otawa::ENTRY">main</property>
+      <inst address="000082ec" file="ref_funCall.c" line="121"/>
+      <inst address="000082f0" file="ref_funCall.c" line="121"/>
+      <inst address="000082f4" file="ref_funCall.c" line="121"/>
+      <inst address="000082f8" file="ref_funCall.c" line="134"/>
+      <inst address="000082fc" file="ref_funCall.c" line="134"/>
+      <inst address="00008300" file="ref_funCall.c" line="135"/>
+      <inst address="00008304" file="ref_funCall.c" line="135"/>
+      <inst address="00008308" file="ref_funCall.c" line="137"/>
+      <inst address="0000830c" file="ref_funCall.c" line="137"/>
+      <inst address="00008310" file="ref_funCall.c" line="138"/>
+    </bb>
+    <bb id="_0-2" address="0000832c" size="12" number="2">
+      <property identifier="otawa::INDEX">2</property>
+      <inst address="0000832c" file="ref_funCall.c" line="138"/>
+      <inst address="00008330" file="ref_funCall.c" line="138"/>
+      <inst address="00008334" file="ref_funCall.c" line="138"/>
+    </bb>
+    <bb id="_0-3" address="00008338" size="20" number="3">
+      <property identifier="otawa::INDEX">3</property>
+      <inst address="00008338" file="ref_funCall.c" line="144"/>
+      <inst address="0000833c" file="ref_funCall.c" line="144"/>
+      <inst address="00008340" file="ref_funCall.c" line="146"/>
+      <inst address="00008344" file="ref_funCall.c" line="146"/>
+      <inst address="00008348" file="ref_funCall.c" line="147"/>
+    </bb>
+    <bb id="_0-4" address="00008314" size="24" number="4">
+      <property identifier="otawa::INDEX">4</property>
+      <inst address="00008314" file="ref_funCall.c" line="140"/>
+      <inst address="00008318" file="ref_funCall.c" line="140"/>
+      <inst address="0000831c" file="ref_funCall.c" line="140"/>
+      <inst address="00008320" file="ref_funCall.c" line="141"/>
+      <inst address="00008324" file="ref_funCall.c" line="141"/>
+      <inst address="00008328" file="ref_funCall.c" line="141"/>
+    </bb>
+    <bb id="_0-5" address="00008368" size="12" number="5">
+      <property identifier="otawa::INDEX">5</property>
+      <inst address="00008368" file="ref_funCall.c" line="147"/>
+      <inst address="0000836c" file="ref_funCall.c" line="147"/>
+      <inst address="00008370" file="ref_funCall.c" line="147"/>
+    </bb>
+    <bb id="_0-6" address="00008374" size="12" number="6">
+      <property identifier="otawa::INDEX">6</property>
+      <inst address="00008374" file="ref_funCall.c" line="152"/>
+      <inst address="00008378" file="ref_funCall.c" line="152"/>
+      <inst address="0000837c" file="ref_funCall.c" line="152"/>
+    </bb>
+    <bb id="_0-7" address="0000834c" size="28" number="7">
+      <property identifier="otawa::INDEX">7</property>
+      <inst address="0000834c" file="ref_funCall.c" line="149"/>
+      <inst address="00008350" file="ref_funCall.c" line="149"/>
+      <inst address="00008354" file="ref_funCall.c" line="149"/>
+      <inst address="00008358" file="ref_funCall.c" line="149"/>
+      <inst address="0000835c" file="ref_funCall.c" line="150"/>
+      <inst address="00008360" file="ref_funCall.c" line="150"/>
+      <inst address="00008364" file="ref_funCall.c" line="150"/>
+    </bb>
+    <bb id="_0-8" address="00008380" size="20" number="8">
+      <property identifier="otawa::INDEX">8</property>
+      <inst address="00008380" file="ref_funCall.c" line="154"/>
+      <inst address="00008384" file="ref_funCall.c" line="154"/>
+      <inst address="00008388" file="ref_funCall.c" line="156"/>
+      <inst address="0000838c" file="ref_funCall.c" line="156"/>
+      <inst address="00008390" file="ref_funCall.c" line="156"/>
+    </bb>
+    <bb id="_0-9" address="00008394" size="16" number="9">
+      <property identifier="otawa::INDEX">9</property>
+      <inst address="00008394" file="ref_funCall.c" line="163"/>
+      <inst address="00008398" file="ref_funCall.c" line="163"/>
+      <inst address="0000839c" file="ref_funCall.c" line="165"/>
+      <inst address="000083a0" file="ref_funCall.c" line="165"/>
+    </bb>
+    <bb id="_0-10" address="000083a4" size="36" number="10">
+      <property identifier="otawa::INDEX">10</property>
+      <inst address="000083a4" file="ref_funCall.c" line="172"/>
+      <inst address="000083a8" file="ref_funCall.c" line="172"/>
+      <inst address="000083ac" file="ref_funCall.c" line="177"/>
+      <inst address="000083b0" file="ref_funCall.c" line="177"/>
+      <inst address="000083b4" file="ref_funCall.c" line="182"/>
+      <inst address="000083b8" file="ref_funCall.c" line="184"/>
+      <inst address="000083bc" file="ref_funCall.c" line="184"/>
+      <inst address="000083c0" file="ref_funCall.c" line="184"/>
+      <inst address="000083c4" file="ref_funCall.c" line="184"/>
+    </bb>
+    <exit id="_0-11"/>
+    <edge kind="virtual" source="_0-0" target="_0-1"/>
+    <edge kind="taken" source="_0-1" target="_0-2"/>
+    <edge kind="taken" source="_0-2" target="_0-4"/>
+    <edge kind="not-taken" source="_0-2" target="_0-3"/>
+    <edge kind="taken" source="_0-3" target="_0-5"/>
+    <edge kind="not-taken" source="_0-4" target="_0-2"/>
+    <edge kind="taken" source="_0-5" target="_0-7"/>
+    <edge kind="not-taken" source="_0-5" target="_0-6"/>
+    <edge kind="taken" source="_0-6" target="_0-9"/>
+    <edge kind="not-taken" source="_0-6" target="_0-8"/>
+    <edge kind="not-taken" source="_0-7" target="_0-5"/>
+    <edge kind="taken" source="_0-8" target="_0-10"/>
+    <edge kind="not-taken" source="_0-9" target="_0-10"/>
+    <edge kind="virtual" source="_0-10" target="_0-11"/>
+  </cfg>
+</cfg-collection>

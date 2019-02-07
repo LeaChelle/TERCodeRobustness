@@ -1,0 +1,28 @@
+treat_other "ref_loopBreak.cptr2bb"
+#pagai2lp: cptr2bb file set to "ref_loopBreak.cptr2bb"
+treat_other "cptr_ref_loopBreak.pagai.c"
+#pagai2lp: pagai c file set to "cptr_ref_loopBreak.pagai.c"
+treat_other "main"
+#pagai2lp: function name set to "main"
+
+# pagai2lp, all invariants in func main:
+x -12 = 0;
+cptr_main_3 = 0;
+cptr_main_2 -1 = 0;
+
+# pagai2lp, normalized invariants in func main:
+x = 12;
+cptr_main_3 = 0;
+cptr_main_2 = 1;
+
+#WARNING: pagai2lp, add extra var cnt_xtra_x because not a counter
+
+# INVARIANTS (as src lines)
+cnt_xtra_x = 12;
+line_23 = 0;
+line_17 = 1;
+
+# INVARIANTS (as basic blocks)
+cnt_xtra_x = 12;
+x6_main = 0;
+x4_main = 1;

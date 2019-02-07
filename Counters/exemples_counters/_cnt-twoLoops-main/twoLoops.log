@@ -1,0 +1,145 @@
+INIT_OPTS=
+BOUNDS_OPTS=
+OWCET_OPTS=
+PAGAI_OPTS=
+
+######################################
+#    INIT STEP                       #
+######################################
+
+-> working dir _cnt-twoLoops-main created
+arm-elf-gcc -E twoLoops.c 
+-> preprocess done
+cdig -counters -oneret     -f main twoLoops.cpp 
+-> ref files created
+arm-elf-gcc -O0  -g3 --specs=linux.specs ref_twoLoops.c  -o ref_twoLoops.elf
+-> _cnt-twoLoops-main/ref_twoLoops.elf created
+-> building ref_twoLoops.cptr2bb
+-> ref_twoLoops.cptr2bb done
+-----------------------
+-> cleaning counters in ref_twoLoops.cptr2bb with 
+->  done
+-----------------------
+Traceability: 100% blocks traced (7 out of 7)
+
+######################################
+#    BOUNDS STEP                     #
+######################################
+
+arg="_cnt-twoLoops-main"
+arg=""
+DO_ORANGE=false
+NO_PRAGMA=false
+BASE=twoLoops
+FUNC=main
+-> (mkff) ffx done
+/usr/local/tools/lustre/misc/w7/bin/arm.looploc
+ref_twoLoops.looploc
+fixffx -i ref_twoLoops.mkffx ref_twoLoops.looploc /usr/local/tools/lustre/misc/w7/bin/arm.looploc  -v
+code=0
+code=0
+#WARNING: NO BOUNDS for line ref_twoLoops.c:16
+#WARNING: NO BOUNDS for line ref_twoLoops.c:30
+-> (fixffx) ffx done
+
+######################################
+#    OWCET STEP                      #
+######################################
+
+BASE=twoLoops
+FUNC=main
+-> add "ref_twoLoops.fixed.ffx" to flow facts
+-> will use  -f ref_twoLoops.fixed.ffx
+owcet -s /usr/local/tools/lustre/misc/w7/share/lpc2138-w7.osx --add-prop otawa::ilp::OUTPUT_PATH=ref_twoLoops.lp -f ref_twoLoops.fixed.ffx ref_twoLoops.elf main
+                                                     ELAPSED TIME (OWCET): 0:00.05
+
+######################################
+#    PAGAI STEP                      #
+######################################
+
+ODIR=_cnt-twoLoops-main
+PAGAI_OPTS=
+BASE=twoLoops
+FUNC=main
+THIS IS DEBUG PRINTING
+// ResourceDir is /lib/clang/3.4
+// analysis: AIopt
+/* processing Function main */
+-> pagai done
+--------------------
+-> (re) building ref_twoLoops.cptr2bb
+cptr_main_1 13 main 1
+cptr_main_2 19 main 7
+cptr_main_3 22 main 8
+cptr_main_4 25 main 11
+cptr_main_5 29 main 5
+cptr_main_6 32 main 13
+cptr_main_7 37 main 6
+-> ref_twoLoops.cptr2bb done
+-----------------------
+treat_other "ref_twoLoops.cptr2bb"
+#pagai2lp: cptr2bb file set to "ref_twoLoops.cptr2bb"
+treat_other "cptr_ref_twoLoops.pagai.c"
+#pagai2lp: pagai c file set to "cptr_ref_twoLoops.pagai.c"
+treat_other "main"
+#pagai2lp: function name set to "main"
+
+# pagai2lp, all invariants in func main:
+cptr_main_7 -1 = 0;
+cptr_main_6 = 0;
+cptr_main_5 = 0;
+cptr_main_4 -20 = 0;
+cptr_main_3 -10 = 0;
+cptr_main_2 -10 = 0;
+y -1 = 0;
+
+# pagai2lp, normalized invariants in func main:
+cptr_main_7 = 1;
+cptr_main_6 = 0;
+cptr_main_5 = 0;
+cptr_main_4 = 20;
+cptr_main_3 = 10;
+cptr_main_2 = 10;
+y = 1;
+
+#WARNING: pagai2lp, add extra var cnt_xtra_y because not a counter
+
+# INVARIANTS (as src lines)
+line_37 = 1;
+line_32 = 0;
+line_29 = 0;
+line_25 = 20;
+line_22 = 10;
+line_19 = 10;
+cnt_xtra_y = 1;
+
+# INVARIANTS (as basic blocks)
+x6_main = 1;
+x13_main = 0;
+x5_main = 0;
+x11_main = 20;
+x8_main = 10;
+x7_main = 10;
+cnt_xtra_y = 1;
+ELAPSED TIME (PAGAI): 0:00.14
+
+######################################
+#    LP (FINAL) STEP                 #
+######################################
+
+#--- BOUNDS STEP SUMMARY -----
+#WARNING: NO BOUNDS for line ref_twoLoops.c:16
+#WARNING: NO BOUNDS for line ref_twoLoops.c:30
+#--- PAGAI WARNING DETECTED ----
+#(see _cnt-twoLoops-main/pagai2lp.log for details)
+#WARNING: pagai2lp, add extra var cnt_xtra_y because not a counter
+#--------------------------------
+
+BASE=twoLoops
+FUNC=main
+# WARNING: "lp_solve_int -S1 ref_twoLoops.lp" failed
+Traceability: 100% blocks traced (7 out of 7)
+Elapsed time in owcet: 0:00.05
+Elapsed time in pagai: 0:00.14
+Estimation WITHOUT PAGAI: "This problem is unbounded"
+Estimation WITH    PAGAI: "694"

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<flowfacts
+	xmlns:xi="http://www.w3.org/2001/XInclude"
+	xmlns:xsl="http://www.w3.org/1999/XSL/Transform">
+
+
+	<function  label="main"> <!-- 0x0000825c (ref_funCallHachis.c:47) -->
+		<loop label="main" offset="0x78" maxcount="NOCOMP"> <!-- 0x000082d4 (ref_funCallHachis.c:69) -->
+		</loop>
+		<loop label="main" offset="0x104" maxcount="NOCOMP"> <!-- 0x00008360 (ref_funCallHachis.c:75) -->
+		</loop>
+	</function>
+
+</flowfacts>

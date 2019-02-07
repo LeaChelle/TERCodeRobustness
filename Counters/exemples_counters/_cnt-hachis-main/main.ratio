@@ -1,0 +1,19 @@
+ADDRESS		NUM	SIZE	TIME	COUNT	RATIO		FUNCTION	LINE
+00008134	1	24	10	0	-0%	main	ref_hachis.c:8,14,15
+00008180	2	12	7	0	-0%	main	ref_hachis.c:15
+0000818c	3	12	4	0	-0%	main	ref_hachis.c:20,21
+0000814c	4	52	27	0	-0%	main	ref_hachis.c:17,18
+00008230	5	12	7	0	-0%	main	ref_hachis.c:21
+0000823c	6	16	8	0	-0%	main	ref_hachis.c:38
+00008198	7	12	7	0	-0%	main	ref_hachis.c:22
+0000824c	8	12	6	0	-0%	main	ref_hachis.c:40
+00008258	9	16	10	0	-0%	main	ref_hachis.c:42
+000081a4	10	40	24	0	-0%	main	ref_hachis.c:24,25
+000081cc	11	32	14	0	-0%	main	ref_hachis.c:27
+00008268	12	12	6	0	-0%	main	ref_hachis.c:44
+00008274	13	24	14	0	-0%	main	ref_hachis.c:46,48
+000081ec	14	20	12	0	-0%	main	ref_hachis.c:29
+00008200	15	16	10	0	-0%	main	ref_hachis.c:31
+00008210	16	20	12	0	-0%	main	ref_hachis.c:33
+00008224	17	12	8	0	-0%	main	ref_hachis.c:36
+TOTAL FUNCTION		0	0	-0%		main

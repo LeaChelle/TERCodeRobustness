@@ -1,0 +1,12 @@
+x4_main = 10;
+x12_main = 1;
+x17_main = 10;
+149 * x8_main  + 16 * x16_main  + 11 * cnt_xtra_x5 <= 309;
+33 * x8_main  + 2 * x16_main  + 2 * cnt_xtra_x5 <= 53;
+23 * x8_main +cnt_xtra_x5 +x10_main <= 29;
+10 * x8_main +x10_main <= x16_main +6;
+x8_main <= 1;
+x10_main <= 6;
+x8_main >= x16_main -9;
+x8_main >= 0;
+14 * x8_main +cnt_xtra_x5 >= x10_main +x14_main +7;

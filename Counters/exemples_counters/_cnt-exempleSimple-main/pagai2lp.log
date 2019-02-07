@@ -1,0 +1,20 @@
+treat_other "ref_exempleSimple.cptr2bb"
+#pagai2lp: cptr2bb file set to "ref_exempleSimple.cptr2bb"
+treat_other "cptr_ref_exempleSimple.pagai.c"
+#pagai2lp: pagai c file set to "cptr_ref_exempleSimple.pagai.c"
+treat_other "main"
+#pagai2lp: function name set to "main"
+
+# pagai2lp, all invariants in func main:
+z -54 = 0;
+
+# pagai2lp, normalized invariants in func main:
+z = 54;
+
+#WARNING: pagai2lp, add extra var cnt_xtra_z because not a counter
+
+# INVARIANTS (as src lines)
+cnt_xtra_z = 54;
+
+# INVARIANTS (as basic blocks)
+cnt_xtra_z = 54;

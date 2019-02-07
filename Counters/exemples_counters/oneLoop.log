@@ -1,0 +1,128 @@
+INIT_OPTS=
+BOUNDS_OPTS=
+OWCET_OPTS=
+PAGAI_OPTS=
+
+######################################
+#    INIT STEP                       #
+######################################
+
+-> working dir _cnt-oneLoop-main created
+arm-elf-gcc -E oneLoop.c 
+-> preprocess done
+cdig -counters -oneret     -f main oneLoop.cpp 
+-> ref files created
+arm-elf-gcc -O0  -g3 --specs=linux.specs ref_oneLoop.c  -o ref_oneLoop.elf
+-> _cnt-oneLoop-main/ref_oneLoop.elf created
+-> building ref_oneLoop.cptr2bb
+-> ref_oneLoop.cptr2bb done
+-----------------------
+-> cleaning counters in ref_oneLoop.cptr2bb with 
+->  done
+-----------------------
+Traceability: 100% blocks traced (4 out of 4)
+
+######################################
+#    BOUNDS STEP                     #
+######################################
+
+arg="_cnt-oneLoop-main"
+arg=""
+DO_ORANGE=false
+NO_PRAGMA=false
+BASE=oneLoop
+FUNC=main
+-> (mkff) ffx done
+/usr/local/tools/lustre/misc/w7/bin/arm.looploc
+ref_oneLoop.looploc
+fixffx -i ref_oneLoop.mkffx ref_oneLoop.looploc /usr/local/tools/lustre/misc/w7/bin/arm.looploc  -v
+code=0
+code=0
+#WARNING: NO BOUNDS for line ref_oneLoop.c:13
+-> (fixffx) ffx done
+
+######################################
+#    OWCET STEP                      #
+######################################
+
+BASE=oneLoop
+FUNC=main
+-> add "ref_oneLoop.fixed.ffx" to flow facts
+-> will use  -f ref_oneLoop.fixed.ffx
+owcet -s /usr/local/tools/lustre/misc/w7/share/lpc2138-w7.osx --add-prop otawa::ilp::OUTPUT_PATH=ref_oneLoop.lp -f ref_oneLoop.fixed.ffx ref_oneLoop.elf main
+                          ELAPSED TIME (OWCET): 0:00.05
+
+######################################
+#    PAGAI STEP                      #
+######################################
+
+ODIR=_cnt-oneLoop-main
+PAGAI_OPTS=
+BASE=oneLoop
+FUNC=main
+THIS IS DEBUG PRINTING
+// ResourceDir is /lib/clang/3.4
+// analysis: AIopt
+/* processing Function main */
+-> pagai done
+--------------------
+-> (re) building ref_oneLoop.cptr2bb
+cptr_main_1 11 main 1
+cptr_main_2 15 main 4
+cptr_main_3 18 main 5
+cptr_main_4 21 main 6
+-> ref_oneLoop.cptr2bb done
+-----------------------
+treat_other "ref_oneLoop.cptr2bb"
+#pagai2lp: cptr2bb file set to "ref_oneLoop.cptr2bb"
+treat_other "cptr_ref_oneLoop.pagai.c"
+#pagai2lp: pagai c file set to "cptr_ref_oneLoop.pagai.c"
+treat_other "main"
+#pagai2lp: function name set to "main"
+
+# pagai2lp, all invariants in func main:
+cptr_main_4 -10 = 0;
+cptr_main_3 = 0;
+cptr_main_2 -10 = 0;
+y -5 = 0;
+
+# pagai2lp, normalized invariants in func main:
+cptr_main_4 = 10;
+cptr_main_3 = 0;
+cptr_main_2 = 10;
+y = 5;
+
+#WARNING: pagai2lp, add extra var cnt_xtra_y because not a counter
+
+# INVARIANTS (as src lines)
+line_21 = 10;
+line_18 = 0;
+line_15 = 10;
+cnt_xtra_y = 5;
+
+# INVARIANTS (as basic blocks)
+x6_main = 10;
+x5_main = 0;
+x4_main = 10;
+cnt_xtra_y = 5;
+ELAPSED TIME (PAGAI): 0:00.08
+
+######################################
+#    LP (FINAL) STEP                 #
+######################################
+
+#--- BOUNDS STEP SUMMARY -----
+#WARNING: NO BOUNDS for line ref_oneLoop.c:13
+#--- PAGAI WARNING DETECTED ----
+#(see _cnt-oneLoop-main/pagai2lp.log for details)
+#WARNING: pagai2lp, add extra var cnt_xtra_y because not a counter
+#--------------------------------
+
+BASE=oneLoop
+FUNC=main
+# WARNING: "lp_solve_int -S1 ref_oneLoop.lp" failed
+Traceability: 100% blocks traced (4 out of 4)
+Elapsed time in owcet: 0:00.05
+Elapsed time in pagai: 0:00.08
+Estimation WITHOUT PAGAI: "This problem is unbounded"
+Estimation WITH    PAGAI: "319"

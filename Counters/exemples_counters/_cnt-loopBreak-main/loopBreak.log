@@ -1,0 +1,123 @@
+INIT_OPTS=
+BOUNDS_OPTS=
+OWCET_OPTS=
+PAGAI_OPTS=
+
+######################################
+#    INIT STEP                       #
+######################################
+
+-> working dir _cnt-loopBreak-main created
+arm-elf-gcc -E loopBreak.c 
+-> preprocess done
+cdig -counters -oneret     -f main loopBreak.cpp 
+-> ref files created
+arm-elf-gcc -O0  -g3 --specs=linux.specs ref_loopBreak.c  -o ref_loopBreak.elf
+-> _cnt-loopBreak-main/ref_loopBreak.elf created
+-> building ref_loopBreak.cptr2bb
+-> ref_loopBreak.cptr2bb done
+-----------------------
+-> cleaning counters in ref_loopBreak.cptr2bb with 
+->  done
+-----------------------
+Traceability: 100% blocks traced (3 out of 3)
+
+######################################
+#    BOUNDS STEP                     #
+######################################
+
+arg="_cnt-loopBreak-main"
+arg=""
+DO_ORANGE=false
+NO_PRAGMA=false
+BASE=loopBreak
+FUNC=main
+-> (mkff) ffx done
+/usr/local/tools/lustre/misc/w7/bin/arm.looploc
+ref_loopBreak.looploc
+fixffx -i ref_loopBreak.mkffx ref_loopBreak.looploc /usr/local/tools/lustre/misc/w7/bin/arm.looploc  -v
+code=0
+code=0
+#WARNING: NO BOUNDS for line ref_loopBreak.c:15
+-> (fixffx) ffx done
+
+######################################
+#    OWCET STEP                      #
+######################################
+
+BASE=loopBreak
+FUNC=main
+-> add "ref_loopBreak.fixed.ffx" to flow facts
+-> will use  -f ref_loopBreak.fixed.ffx
+owcet -s /usr/local/tools/lustre/misc/w7/share/lpc2138-w7.osx --add-prop otawa::ilp::OUTPUT_PATH=ref_loopBreak.lp -f ref_loopBreak.fixed.ffx ref_loopBreak.elf main
+                             ELAPSED TIME (OWCET): 0:00.04
+
+######################################
+#    PAGAI STEP                      #
+######################################
+
+ODIR=_cnt-loopBreak-main
+PAGAI_OPTS=
+BASE=loopBreak
+FUNC=main
+THIS IS DEBUG PRINTING
+// ResourceDir is /lib/clang/3.4
+// analysis: AIopt
+/* processing Function main */
+-> pagai done
+--------------------
+-> (re) building ref_loopBreak.cptr2bb
+cptr_main_1 12 main 1
+cptr_main_2 17 main 4
+cptr_main_3 23 main 6
+-> ref_loopBreak.cptr2bb done
+-----------------------
+treat_other "ref_loopBreak.cptr2bb"
+#pagai2lp: cptr2bb file set to "ref_loopBreak.cptr2bb"
+treat_other "cptr_ref_loopBreak.pagai.c"
+#pagai2lp: pagai c file set to "cptr_ref_loopBreak.pagai.c"
+treat_other "main"
+#pagai2lp: function name set to "main"
+
+# pagai2lp, all invariants in func main:
+x -12 = 0;
+cptr_main_3 = 0;
+cptr_main_2 -1 = 0;
+
+# pagai2lp, normalized invariants in func main:
+x = 12;
+cptr_main_3 = 0;
+cptr_main_2 = 1;
+
+#WARNING: pagai2lp, add extra var cnt_xtra_x because not a counter
+
+# INVARIANTS (as src lines)
+cnt_xtra_x = 12;
+line_23 = 0;
+line_17 = 1;
+
+# INVARIANTS (as basic blocks)
+cnt_xtra_x = 12;
+x6_main = 0;
+x4_main = 1;
+ELAPSED TIME (PAGAI): 0:00.09
+
+######################################
+#    LP (FINAL) STEP                 #
+######################################
+
+#--- BOUNDS STEP SUMMARY -----
+#WARNING: NO BOUNDS for line ref_loopBreak.c:15
+#--- PAGAI WARNING DETECTED ----
+#(see _cnt-loopBreak-main/pagai2lp.log for details)
+#WARNING: pagai2lp, add extra var cnt_xtra_x because not a counter
+#--------------------------------
+
+BASE=loopBreak
+FUNC=main
+# WARNING: "lp_solve_int -S1 ref_loopBreak.lp" failed
+Traceability: 100% blocks traced (3 out of 3)
+Elapsed time in owcet: 0:00.04
+Elapsed time in pagai: 0:00.09
+Estimation WITHOUT PAGAI: "This problem is unbounded"
+Estimation WITH    PAGAI: "58"

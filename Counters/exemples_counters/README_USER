@@ -1,0 +1,54 @@
+
+Counter Method, User view
+=========================
+
+Step by step
+------------
+
+The "tool" is made of several steps, each implemented
+by a command line (bash scripts), that must be called
+according to the following dependencies
+(double line means optional):
+
+         cnt_init
+       //  |    \
+cnt_bounds |     \
+     //    |      \
+    cnt_owcet    cnt_pagai
+            \    /
+            cnt_lp
+
+There is also a "meta script" (cnt) for simplifying/chaining steps (see below).
+Each step has few options, type (cnt_xxx -h for details).
+
+- cnt_init initialize a working dir with
+  * reference c programs, with and without counters
+  * corresponding bin code (the "elf") 
+  * options:
+   -i|-inline     (CIL) recursively inline the function
+   -O0|-O1|-O2    optimization level for gcc (dflt -O0)
+
+- cnt_bounds complete the working dir with loop bounds coming from:
+  * user annotations in the c code (pragma)
+  * static information on the c library (floating point arithmetic)
+  * optionally orange
+  * options:
+    -orange    use orange to find bounds
+    -strict    fails if NOCOMP remains
+
+- cnt_owcet mainly computes the lp system 
+  * options:
+    -noffx   don't USE the ff files (if any)
+
+- cnt_pagai runs pagai and extract (hopefully) invariants
+  compatible with the lp system
+  * options:
+    - any option accepted by pagai (run pagai to see them)
+
+- cnt-lp, finally, uses lp_solve to compare the 
+  wcet optained with/without the pagai invariants
+
+Example
+-------
+$WSEPT_BENCH/TACLeBench/BENCHMARKS/SEQUENTIAL/
+

@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cfg-collection>
+  <cfg id="_0" address="_0" label="main" number="0">
+    <property identifier="otawa::INDEX">0</property>
+    <property identifier="otawa::LABEL">main</property>
+    <entry id="_0-0"/>
+    <bb id="_0-1" address="00008134" size="40" number="1">
+      <property identifier="otawa::INDEX">1</property>
+      <property identifier="otawa::ENTRY">main</property>
+      <inst address="00008134" file="ref_twoLoops.c" line="5"/>
+      <inst address="00008138" file="ref_twoLoops.c" line="5"/>
+      <inst address="0000813c" file="ref_twoLoops.c" line="5"/>
+      <inst address="00008140" file="ref_twoLoops.c" line="13"/>
+      <inst address="00008144" file="ref_twoLoops.c" line="13"/>
+      <inst address="00008148" file="ref_twoLoops.c" line="14"/>
+      <inst address="0000814c" file="ref_twoLoops.c" line="14"/>
+      <inst address="00008150" file="ref_twoLoops.c" line="15"/>
+      <inst address="00008154" file="ref_twoLoops.c" line="15"/>
+      <inst address="00008158" file="ref_twoLoops.c" line="16"/>
+    </bb>
+    <bb id="_0-2" address="00008194" size="12" number="2">
+      <property identifier="otawa::INDEX">2</property>
+      <inst address="00008194" file="ref_twoLoops.c" line="16"/>
+      <inst address="00008198" file="ref_twoLoops.c" line="16"/>
+      <inst address="0000819c" file="ref_twoLoops.c" line="16"/>
+    </bb>
+    <bb id="_0-3" address="000081a0" size="12" number="3">
+      <property identifier="otawa::INDEX">3</property>
+      <inst address="000081a0" file="ref_twoLoops.c" line="27"/>
+      <inst address="000081a4" file="ref_twoLoops.c" line="27"/>
+      <inst address="000081a8" file="ref_twoLoops.c" line="27"/>
+    </bb>
+    <bb id="_0-4" address="0000815c" size="16" number="4">
+      <property identifier="otawa::INDEX">4</property>
+      <inst address="0000815c" file="ref_twoLoops.c" line="17"/>
+      <inst address="00008160" file="ref_twoLoops.c" line="17"/>
+      <inst address="00008164" file="ref_twoLoops.c" line="17"/>
+      <inst address="00008168" file="ref_twoLoops.c" line="17"/>
+    </bb>
+    <bb id="_0-5" address="000081ac" size="12" number="5">
+      <property identifier="otawa::INDEX">5</property>
+      <inst address="000081ac" file="ref_twoLoops.c" line="29"/>
+      <inst address="000081b0" file="ref_twoLoops.c" line="29"/>
+      <inst address="000081b4" file="ref_twoLoops.c" line="30"/>
+    </bb>
+    <bb id="_0-6" address="000081e4" size="8" number="6">
+      <property identifier="otawa::INDEX">6</property>
+      <inst address="000081e4" file="ref_twoLoops.c" line="37"/>
+      <inst address="000081e8" file="ref_twoLoops.c" line="37"/>
+    </bb>
+    <bb id="_0-7" address="0000816c" size="16" number="7">
+      <property identifier="otawa::INDEX">7</property>
+      <inst address="0000816c" file="ref_twoLoops.c" line="19"/>
+      <inst address="00008170" file="ref_twoLoops.c" line="19"/>
+      <inst address="00008174" file="ref_twoLoops.c" line="19"/>
+      <inst address="00008178" file="ref_twoLoops.c" line="19"/>
+    </bb>
+    <bb id="_0-8" address="0000817c" size="12" number="8">
+      <property identifier="otawa::INDEX">8</property>
+      <inst address="0000817c" file="ref_twoLoops.c" line="22"/>
+      <inst address="00008180" file="ref_twoLoops.c" line="22"/>
+      <inst address="00008184" file="ref_twoLoops.c" line="22"/>
+    </bb>
+    <bb id="_0-9" address="000081d4" size="12" number="9">
+      <property identifier="otawa::INDEX">9</property>
+      <inst address="000081d4" file="ref_twoLoops.c" line="30"/>
+      <inst address="000081d8" file="ref_twoLoops.c" line="30"/>
+      <inst address="000081dc" file="ref_twoLoops.c" line="30"/>
+    </bb>
+    <bb id="_0-10" address="000081ec" size="20" number="10">
+      <property identifier="otawa::INDEX">10</property>
+      <inst address="000081ec" file="ref_twoLoops.c" line="39"/>
+      <inst address="000081f0" file="ref_twoLoops.c" line="41"/>
+      <inst address="000081f4" file="ref_twoLoops.c" line="41"/>
+      <inst address="000081f8" file="ref_twoLoops.c" line="41"/>
+      <inst address="000081fc" file="ref_twoLoops.c" line="41"/>
+    </bb>
+    <bb id="_0-11" address="00008188" size="12" number="11">
+      <property identifier="otawa::INDEX">11</property>
+      <inst address="00008188" file="ref_twoLoops.c" line="25"/>
+      <inst address="0000818c" file="ref_twoLoops.c" line="25"/>
+      <inst address="00008190" file="ref_twoLoops.c" line="25"/>
+    </bb>
+    <bb id="_0-12" address="000081e0" size="4" number="12">
+      <property identifier="otawa::INDEX">12</property>
+      <inst address="000081e0" file="ref_twoLoops.c" line="30"/>
+    </bb>
+    <bb id="_0-13" address="000081b8" size="28" number="13">
+      <property identifier="otawa::INDEX">13</property>
+      <inst address="000081b8" file="ref_twoLoops.c" line="32"/>
+      <inst address="000081bc" file="ref_twoLoops.c" line="32"/>
+      <inst address="000081c0" file="ref_twoLoops.c" line="32"/>
+      <inst address="000081c4" file="ref_twoLoops.c" line="32"/>
+      <inst address="000081c8" file="ref_twoLoops.c" line="33"/>
+      <inst address="000081cc" file="ref_twoLoops.c" line="33"/>
+      <inst address="000081d0" file="ref_twoLoops.c" line="33"/>
+    </bb>
+    <exit id="_0-14"/>
+    <edge kind="virtual" source="_0-0" target="_0-1"/>
+    <edge kind="taken" source="_0-1" target="_0-2"/>
+    <edge kind="taken" source="_0-2" target="_0-4"/>
+    <edge kind="not-taken" source="_0-2" target="_0-3"/>
+    <edge kind="taken" source="_0-3" target="_0-6"/>
+    <edge kind="not-taken" source="_0-3" target="_0-5"/>
+    <edge kind="taken" source="_0-4" target="_0-8"/>
+    <edge kind="not-taken" source="_0-4" target="_0-7"/>
+    <edge kind="taken" source="_0-5" target="_0-9"/>
+    <edge kind="not-taken" source="_0-6" target="_0-10"/>
+    <edge kind="taken" source="_0-7" target="_0-11"/>
+    <edge kind="not-taken" source="_0-8" target="_0-11"/>
+    <edge kind="taken" source="_0-9" target="_0-13"/>
+    <edge kind="not-taken" source="_0-9" target="_0-12"/>
+    <edge kind="virtual" source="_0-10" target="_0-14"/>
+    <edge kind="not-taken" source="_0-11" target="_0-2"/>
+    <edge kind="taken" source="_0-12" target="_0-10"/>
+    <edge kind="not-taken" source="_0-13" target="_0-9"/>
+  </cfg>
+</cfg-collection>

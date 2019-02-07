@@ -1,0 +1,154 @@
+INIT_OPTS=
+BOUNDS_OPTS=
+OWCET_OPTS=
+PAGAI_OPTS=
+
+######################################
+#    INIT STEP                       #
+######################################
+
+-> working dir _cnt-hachisBreak-main created
+arm-elf-gcc -E hachisBreak.c 
+-> preprocess done
+cdig -counters -oneret     -f main hachisBreak.cpp 
+-> ref files created
+arm-elf-gcc -O0  -g3 --specs=linux.specs ref_hachisBreak.c  -o ref_hachisBreak.elf
+-> _cnt-hachisBreak-main/ref_hachisBreak.elf created
+-> building ref_hachisBreak.cptr2bb
+-> ref_hachisBreak.cptr2bb done
+-----------------------
+-> cleaning counters in ref_hachisBreak.cptr2bb with 
+->  done
+-----------------------
+Traceability: 100% blocks traced (8 out of 8)
+
+######################################
+#    BOUNDS STEP                     #
+######################################
+
+arg="_cnt-hachisBreak-main"
+arg=""
+DO_ORANGE=false
+NO_PRAGMA=false
+BASE=hachisBreak
+FUNC=main
+-> (mkff) ffx done
+/usr/local/tools/lustre/misc/w7/bin/arm.looploc
+ref_hachisBreak.looploc
+fixffx -i ref_hachisBreak.mkffx ref_hachisBreak.looploc /usr/local/tools/lustre/misc/w7/bin/arm.looploc  -v
+code=0
+code=0
+#WARNING: NO BOUNDS for line ref_hachisBreak.c:18
+#WARNING: NO BOUNDS for line ref_hachisBreak.c:24
+-> (fixffx) ffx done
+
+######################################
+#    OWCET STEP                      #
+######################################
+
+BASE=hachisBreak
+FUNC=main
+-> add "ref_hachisBreak.fixed.ffx" to flow facts
+-> will use  -f ref_hachisBreak.fixed.ffx
+owcet -s /usr/local/tools/lustre/misc/w7/share/lpc2138-w7.osx --add-prop otawa::ilp::OUTPUT_PATH=ref_hachisBreak.lp -f ref_hachisBreak.fixed.ffx ref_hachisBreak.elf main
+                                                                                      ELAPSED TIME (OWCET): 0:00.06
+
+######################################
+#    PAGAI STEP                      #
+######################################
+
+ODIR=_cnt-hachisBreak-main
+PAGAI_OPTS=
+BASE=hachisBreak
+FUNC=main
+THIS IS DEBUG PRINTING
+// ResourceDir is /lib/clang/3.4
+// analysis: AIopt
+/* processing Function main */
+-> pagai done
+--------------------
+-> (re) building ref_hachisBreak.cptr2bb
+cptr_main_1 14 main 1
+cptr_main_2 20 main 4
+cptr_main_3 27 main 9
+cptr_main_4 32 main 13
+cptr_main_5 36 main 17
+cptr_main_6 42 main 19
+cptr_main_7 46 main 11
+cptr_main_8 50 main 15
+-> ref_hachisBreak.cptr2bb done
+-----------------------
+treat_other "ref_hachisBreak.cptr2bb"
+#pagai2lp: cptr2bb file set to "ref_hachisBreak.cptr2bb"
+treat_other "cptr_ref_hachisBreak.pagai.c"
+#pagai2lp: pagai c file set to "cptr_ref_hachisBreak.pagai.c"
+treat_other "main"
+#pagai2lp: function name set to "main"
+
+# pagai2lp, all invariants in func main:
+cptr_main_4 -x +8 = 0;
+cptr_main_8 -1 = 0;
+cptr_main_7 = 0;
+cptr_main_6 = 0;
+cptr_main_5 -1 = 0;
+cptr_main_3 -1 = 0;
+cptr_main_2 -10 = 0;
+-x +9 >= 0;
+x -8 >= 0;
+
+# pagai2lp, normalized invariants in func main:
+cptr_main_4 = x -8;
+cptr_main_8 = 1;
+cptr_main_7 = 0;
+cptr_main_6 = 0;
+cptr_main_5 = 1;
+cptr_main_3 = 1;
+cptr_main_2 = 10;
+x <= 9;
+x >= 8;
+
+#WARNING: pagai2lp, add extra var cnt_xtra_x because not a counter
+
+# INVARIANTS (as src lines)
+line_32 = cnt_xtra_x -8;
+line_50 = 1;
+line_46 = 0;
+line_42 = 0;
+line_36 = 1;
+line_27 = 1;
+line_20 = 10;
+cnt_xtra_x <= 9;
+cnt_xtra_x >= 8;
+
+# INVARIANTS (as basic blocks)
+x13_main = cnt_xtra_x -8;
+x15_main = 1;
+x11_main = 0;
+x19_main = 0;
+x17_main = 1;
+x9_main = 1;
+x4_main = 10;
+cnt_xtra_x <= 9;
+cnt_xtra_x >= 8;
+ELAPSED TIME (PAGAI): 0:00.12
+
+######################################
+#    LP (FINAL) STEP                 #
+######################################
+
+#--- BOUNDS STEP SUMMARY -----
+#WARNING: NO BOUNDS for line ref_hachisBreak.c:18
+#WARNING: NO BOUNDS for line ref_hachisBreak.c:24
+#--- PAGAI WARNING DETECTED ----
+#(see _cnt-hachisBreak-main/pagai2lp.log for details)
+#WARNING: pagai2lp, add extra var cnt_xtra_x because not a counter
+#--------------------------------
+
+BASE=hachisBreak
+FUNC=main
+# WARNING: "lp_solve_int -S1 ref_hachisBreak.lp" failed
+Traceability: 100% blocks traced (8 out of 8)
+Elapsed time in owcet: 0:00.06
+Elapsed time in pagai: 0:00.12
+Estimation WITHOUT PAGAI: "This problem is unbounded"
+Estimation WITH    PAGAI: "437"

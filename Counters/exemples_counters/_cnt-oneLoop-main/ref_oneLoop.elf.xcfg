@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cfg-collection>
+  <cfg id="_0" address="_0" label="main" number="0">
+    <property identifier="otawa::INDEX">0</property>
+    <property identifier="otawa::LABEL">main</property>
+    <entry id="_0-0"/>
+    <bb id="_0-1" address="00008134" size="32" number="1">
+      <property identifier="otawa::INDEX">1</property>
+      <property identifier="otawa::ENTRY">main</property>
+      <inst address="00008134" file="ref_oneLoop.c" line="5"/>
+      <inst address="00008138" file="ref_oneLoop.c" line="5"/>
+      <inst address="0000813c" file="ref_oneLoop.c" line="5"/>
+      <inst address="00008140" file="ref_oneLoop.c" line="11"/>
+      <inst address="00008144" file="ref_oneLoop.c" line="11"/>
+      <inst address="00008148" file="ref_oneLoop.c" line="12"/>
+      <inst address="0000814c" file="ref_oneLoop.c" line="12"/>
+      <inst address="00008150" file="ref_oneLoop.c" line="13"/>
+    </bb>
+    <bb id="_0-2" address="00008188" size="12" number="2">
+      <property identifier="otawa::INDEX">2</property>
+      <inst address="00008188" file="ref_oneLoop.c" line="13"/>
+      <inst address="0000818c" file="ref_oneLoop.c" line="13"/>
+      <inst address="00008190" file="ref_oneLoop.c" line="13"/>
+    </bb>
+    <bb id="_0-3" address="00008194" size="20" number="3">
+      <property identifier="otawa::INDEX">3</property>
+      <inst address="00008194" file="ref_oneLoop.c" line="23"/>
+      <inst address="00008198" file="ref_oneLoop.c" line="25"/>
+      <inst address="0000819c" file="ref_oneLoop.c" line="25"/>
+      <inst address="000081a0" file="ref_oneLoop.c" line="25"/>
+      <inst address="000081a4" file="ref_oneLoop.c" line="25"/>
+    </bb>
+    <bb id="_0-4" address="00008154" size="28" number="4">
+      <property identifier="otawa::INDEX">4</property>
+      <inst address="00008154" file="ref_oneLoop.c" line="15"/>
+      <inst address="00008158" file="ref_oneLoop.c" line="15"/>
+      <inst address="0000815c" file="ref_oneLoop.c" line="15"/>
+      <inst address="00008160" file="ref_oneLoop.c" line="16"/>
+      <inst address="00008164" file="ref_oneLoop.c" line="16"/>
+      <inst address="00008168" file="ref_oneLoop.c" line="16"/>
+      <inst address="0000816c" file="ref_oneLoop.c" line="16"/>
+    </bb>
+    <bb id="_0-5" address="00008170" size="12" number="5">
+      <property identifier="otawa::INDEX">5</property>
+      <inst address="00008170" file="ref_oneLoop.c" line="18"/>
+      <inst address="00008174" file="ref_oneLoop.c" line="18"/>
+      <inst address="00008178" file="ref_oneLoop.c" line="18"/>
+    </bb>
+    <bb id="_0-6" address="0000817c" size="12" number="6">
+      <property identifier="otawa::INDEX">6</property>
+      <inst address="0000817c" file="ref_oneLoop.c" line="21"/>
+      <inst address="00008180" file="ref_oneLoop.c" line="21"/>
+      <inst address="00008184" file="ref_oneLoop.c" line="21"/>
+    </bb>
+    <exit id="_0-7"/>
+    <edge kind="virtual" source="_0-0" target="_0-1"/>
+    <edge kind="taken" source="_0-1" target="_0-2"/>
+    <edge kind="taken" source="_0-2" target="_0-4"/>
+    <edge kind="not-taken" source="_0-2" target="_0-3"/>
+    <edge kind="virtual" source="_0-3" target="_0-7"/>
+    <edge kind="taken" source="_0-4" target="_0-6"/>
+    <edge kind="not-taken" source="_0-4" target="_0-5"/>
+    <edge kind="not-taken" source="_0-5" target="_0-6"/>
+    <edge kind="not-taken" source="_0-6" target="_0-2"/>
+  </cfg>
+</cfg-collection>

@@ -1,0 +1,8 @@
+ADDRESS		NUM	SIZE	TIME	COUNT	RATIO		FUNCTION	LINE
+00008178	1	28	14	1	24.5614%	main	ref_exempleSimple.c:20,26,27
+00008194	2	24	14	1	24.5614%	main	ref_exempleSimple.c:27,28,30
+00008134	3	28	13	1	22.807%	main	ref_exempleSimple.c:5,9
+00008150	4	12	4	0	0%	main	ref_exempleSimple.c:11
+0000815c	5	8	5	1	8.77193%	main	ref_exempleSimple.c:14
+00008164	6	20	11	1	19.2982%	main	ref_exempleSimple.c:16,18
+TOTAL FUNCTION		57	1	100%		main

@@ -1,0 +1,22 @@
+Pour compiler uniquement (produire un binaire) : 
+make <file>.elf 
+Exemple : make counter.elf
+
+Pour produire un CFG C pour la fonction <nom_fonction>, main par défaut si pas de FCT indiqué (la compilation est lancée automatiquement avant) :
+make <file>.ccfg [FCT=<nom_fonction>]
+Exemple 1 : make counter.ccfg
+produit un fichier counter.main.c.graphml
+Exemple 2 : make counter.ccfg FCT=counter
+produit un fichier counter.counter.c.graphml
+
+Pour produire un CFG binaire  (idem):
+make <file>.cfg [FCT=<nom_fonction>]
+Exemple 1 : make counter.cfg
+produit un fichier counter.main.graphml
+Exemple 2 : make counter.cfg FCT=counter
+produit un fichier counter.counter.graphml
+
+Pour afficher un CFG (C ou binaire) :
+yEd &
+File --> Open --> choisir un fichier .graphml
+Layout --> Hierarchical

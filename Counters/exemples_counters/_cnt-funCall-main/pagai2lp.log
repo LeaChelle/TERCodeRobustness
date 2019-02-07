@@ -1,0 +1,22 @@
+treat_other "ref_funCall.cptr2bb"
+#pagai2lp: cptr2bb file set to "ref_funCall.cptr2bb"
+treat_other "cptr_ref_funCall.pagai.c"
+#pagai2lp: pagai c file set to "cptr_ref_funCall.pagai.c"
+treat_other "main"
+#pagai2lp: function name set to "main"
+
+# pagai2lp, all invariants in func main:
+cptr_main_2 -10 = 0;
+cptr_main_1 -10 = 0;
+
+# pagai2lp, normalized invariants in func main:
+cptr_main_2 = 10;
+cptr_main_1 = 10;
+
+# INVARIANTS (as src lines)
+line_149 = 10;
+line_140 = 10;
+
+# INVARIANTS (as basic blocks)
+x7_main = 10;
+x4_main = 10;

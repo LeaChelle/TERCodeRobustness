@@ -1,0 +1,64 @@
+treat_other "ref_funCallHachis.cptr2bb"
+#pagai2lp: cptr2bb file set to "ref_funCallHachis.cptr2bb"
+treat_other "cptr_ref_funCallHachis.pagai.c"
+#pagai2lp: pagai c file set to "cptr_ref_funCallHachis.pagai.c"
+treat_other "main"
+#pagai2lp: function name set to "main"
+
+# pagai2lp, all invariants in func main:
+cptr_main_1 -10 = 0;
+cptr_main_7 -1 = 0;
+cptr_main_5 -10 = 0;
+ - 11 * x5  - 16 * cptr_main_4  - 149 * cptr_main_6 +309 >= 0;
+ - 2 * x5  - 2 * cptr_main_4  - 33 * cptr_main_6 +53 >= 0;
+-cptr_main_2 -x5  - 23 * cptr_main_6 +29 >= 0;
+-cptr_main_2 +cptr_main_4  - 10 * cptr_main_6 +6 >= 0;
+-cptr_main_6 +1 >= 0;
+-cptr_main_2 +6 >= 0;
+-cptr_main_4 +cptr_main_6 +9 >= 0;
+cptr_main_6 >= 0;
+-cptr_main_3 -cptr_main_2 +x5  + 14 * cptr_main_6 -7 >= 0;
+
+# pagai2lp, normalized invariants in func main:
+cptr_main_1 = 10;
+cptr_main_7 = 1;
+cptr_main_5 = 10;
+149 * cptr_main_6  + 16 * cptr_main_4  + 11 * x5 <= 309;
+33 * cptr_main_6  + 2 * cptr_main_4  + 2 * x5 <= 53;
+23 * cptr_main_6 +x5 +cptr_main_2 <= 29;
+10 * cptr_main_6 +cptr_main_2 <= cptr_main_4 +6;
+cptr_main_6 <= 1;
+cptr_main_2 <= 6;
+cptr_main_6 >= cptr_main_4 -9;
+cptr_main_6 >= 0;
+14 * cptr_main_6 +x5 >= cptr_main_2 +cptr_main_3 +7;
+
+#WARNING: pagai2lp, add extra var cnt_xtra_x5 because not a counter
+
+# INVARIANTS (as src lines)
+line_71 = 10;
+line_98 = 1;
+line_90 = 10;
+149 * line_94  + 16 * line_87  + 11 * cnt_xtra_x5 <= 309;
+33 * line_94  + 2 * line_87  + 2 * cnt_xtra_x5 <= 53;
+23 * line_94 +cnt_xtra_x5 +line_78 <= 29;
+10 * line_94 +line_78 <= line_87 +6;
+line_94 <= 1;
+line_78 <= 6;
+line_94 >= line_87 -9;
+line_94 >= 0;
+14 * line_94 +cnt_xtra_x5 >= line_78 +line_83 +7;
+
+# INVARIANTS (as basic blocks)
+x4_main = 10;
+x12_main = 1;
+x17_main = 10;
+149 * x8_main  + 16 * x16_main  + 11 * cnt_xtra_x5 <= 309;
+33 * x8_main  + 2 * x16_main  + 2 * cnt_xtra_x5 <= 53;
+23 * x8_main +cnt_xtra_x5 +x10_main <= 29;
+10 * x8_main +x10_main <= x16_main +6;
+x8_main <= 1;
+x10_main <= 6;
+x8_main >= x16_main -9;
+x8_main >= 0;
+14 * x8_main +cnt_xtra_x5 >= x10_main +x14_main +7;

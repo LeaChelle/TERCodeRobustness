@@ -1,0 +1,62 @@
+treat_other "ref_hachis.cptr2bb"
+#pagai2lp: cptr2bb file set to "ref_hachis.cptr2bb"
+treat_other "cptr_ref_hachis.pagai.c"
+#pagai2lp: pagai c file set to "cptr_ref_hachis.pagai.c"
+treat_other "main"
+#pagai2lp: function name set to "main"
+
+# pagai2lp, all invariants in func main:
+cptr_main_8 -1 = 0;
+cptr_main_6 -10 = 0;
+cptr_main_2 -10 = 0;
+ - 149 * cptr_main_7  - 16 * cptr_main_5  - 11 * cptr_main_8 +309 >= 0;
+ - 33 * cptr_main_7  - 2 * cptr_main_5  - 2 * cptr_main_8 +53 >= 0;
+ - 23 * cptr_main_7 -cptr_main_3 -cptr_main_8 +29 >= 0;
+-cptr_main_3 +6 >= 0;
+ - 10 * cptr_main_7 +cptr_main_5 -cptr_main_3 +6 >= 0;
+cptr_main_7 -cptr_main_5 +9 >= 0;
+-cptr_main_7 +1 >= 0;
+cptr_main_7 >= 0;
+14 * cptr_main_7 -cptr_main_4 -cptr_main_3 +cptr_main_8 -7 >= 0;
+
+# pagai2lp, normalized invariants in func main:
+cptr_main_8 = 1;
+cptr_main_6 = 10;
+cptr_main_2 = 10;
+11 * cptr_main_8  + 16 * cptr_main_5  + 149 * cptr_main_7 <= 309;
+2 * cptr_main_8  + 2 * cptr_main_5  + 33 * cptr_main_7 <= 53;
+cptr_main_8 +cptr_main_3  + 23 * cptr_main_7 <= 29;
+cptr_main_3 <= 6;
+cptr_main_3  + 10 * cptr_main_7 <= cptr_main_5 +6;
+cptr_main_7 >= cptr_main_5 -9;
+cptr_main_7 <= 1;
+cptr_main_7 >= 0;
+cptr_main_8  + 14 * cptr_main_7 >= cptr_main_3 +cptr_main_4 +7;
+
+# INVARIANTS (as src lines)
+line_44 = 1;
+line_36 = 10;
+line_17 = 10;
+11 * line_44  + 16 * line_33  + 149 * line_40 <= 309;
+2 * line_44  + 2 * line_33  + 33 * line_40 <= 53;
+line_44 +line_24  + 23 * line_40 <= 29;
+line_24 <= 6;
+line_24  + 10 * line_40 <= line_33 +6;
+line_40 >= line_33 -9;
+line_40 <= 1;
+line_40 >= 0;
+line_44  + 14 * line_40 >= line_24 +line_29 +7;
+
+# INVARIANTS (as basic blocks)
+x12_main = 1;
+x17_main = 10;
+x4_main = 10;
+11 * x12_main  + 16 * x16_main  + 149 * x8_main <= 309;
+2 * x12_main  + 2 * x16_main  + 33 * x8_main <= 53;
+x12_main +x10_main  + 23 * x8_main <= 29;
+x10_main <= 6;
+x10_main  + 10 * x8_main <= x16_main +6;
+x8_main >= x16_main -9;
+x8_main <= 1;
+x8_main >= 0;
+x12_main  + 14 * x8_main >= x10_main +x14_main +7;

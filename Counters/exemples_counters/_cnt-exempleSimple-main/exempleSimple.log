@@ -1,0 +1,112 @@
+INIT_OPTS=
+BOUNDS_OPTS=
+OWCET_OPTS=
+PAGAI_OPTS=
+
+######################################
+#    INIT STEP                       #
+######################################
+
+-> working dir _cnt-exempleSimple-main created
+arm-elf-gcc -E exempleSimple.c 
+-> preprocess done
+cdig -counters -oneret     -f main exempleSimple.cpp 
+-> ref files created
+arm-elf-gcc -O0  -g3 --specs=linux.specs ref_exempleSimple.c  -o ref_exempleSimple.elf
+-> _cnt-exempleSimple-main/ref_exempleSimple.elf created
+-> building ref_exempleSimple.cptr2bb
+-> ref_exempleSimple.cptr2bb done
+-----------------------
+-> cleaning counters in ref_exempleSimple.cptr2bb with 
+->  done
+-----------------------
+Traceability: 100% blocks traced (1 out of 1)
+
+######################################
+#    BOUNDS STEP                     #
+######################################
+
+arg="_cnt-exempleSimple-main"
+arg=""
+DO_ORANGE=false
+NO_PRAGMA=false
+BASE=exempleSimple
+FUNC=main
+-> (mkff) ffx done
+/usr/local/tools/lustre/misc/w7/bin/arm.looploc
+ref_exempleSimple.looploc
+fixffx -i ref_exempleSimple.mkffx ref_exempleSimple.looploc /usr/local/tools/lustre/misc/w7/bin/arm.looploc  -v
+code=0
+code=0
+-> (fixffx) ffx done
+
+######################################
+#    OWCET STEP                      #
+######################################
+
+BASE=exempleSimple
+FUNC=main
+-> add "ref_exempleSimple.fixed.ffx" to flow facts
+-> will use  -f ref_exempleSimple.fixed.ffx
+owcet -s /usr/local/tools/lustre/misc/w7/share/lpc2138-w7.osx --add-prop otawa::ilp::OUTPUT_PATH=ref_exempleSimple.lp -f ref_exempleSimple.fixed.ffx ref_exempleSimple.elf main
+                       WCET[main] = 57 cycles
+ELAPSED TIME (OWCET): 0:00.04
+
+######################################
+#    PAGAI STEP                      #
+######################################
+
+ODIR=_cnt-exempleSimple-main
+PAGAI_OPTS=
+BASE=exempleSimple
+FUNC=main
+THIS IS DEBUG PRINTING
+// ResourceDir is /lib/clang/3.4
+// analysis: AIopt
+/* processing Function main */
+-> pagai done
+--------------------
+-> (re) building ref_exempleSimple.cptr2bb
+cptr_main_1 26 main 1
+-> ref_exempleSimple.cptr2bb done
+-----------------------
+treat_other "ref_exempleSimple.cptr2bb"
+#pagai2lp: cptr2bb file set to "ref_exempleSimple.cptr2bb"
+treat_other "cptr_ref_exempleSimple.pagai.c"
+#pagai2lp: pagai c file set to "cptr_ref_exempleSimple.pagai.c"
+treat_other "main"
+#pagai2lp: function name set to "main"
+
+# pagai2lp, all invariants in func main:
+z -54 = 0;
+
+# pagai2lp, normalized invariants in func main:
+z = 54;
+
+#WARNING: pagai2lp, add extra var cnt_xtra_z because not a counter
+
+# INVARIANTS (as src lines)
+cnt_xtra_z = 54;
+
+# INVARIANTS (as basic blocks)
+cnt_xtra_z = 54;
+ELAPSED TIME (PAGAI): 0:00.05
+
+######################################
+#    LP (FINAL) STEP                 #
+######################################
+
+#--- BOUNDS STEP SUMMARY -----
+#--- PAGAI WARNING DETECTED ----
+#(see _cnt-exempleSimple-main/pagai2lp.log for details)
+#WARNING: pagai2lp, add extra var cnt_xtra_z because not a counter
+#--------------------------------
+
+BASE=exempleSimple
+FUNC=main
+Traceability: 100% blocks traced (1 out of 1)
+Elapsed time in owcet: 0:00.04
+Elapsed time in pagai: 0:00.05
+Estimation WITHOUT PAGAI: "57"
+Estimation WITH    PAGAI: "57"
+Gain: 0.00%

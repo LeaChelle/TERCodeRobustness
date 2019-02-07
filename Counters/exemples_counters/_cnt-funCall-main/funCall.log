@@ -1,0 +1,114 @@
+INIT_OPTS= -inline
+BOUNDS_OPTS=
+OWCET_OPTS=
+PAGAI_OPTS=
+
+######################################
+#    INIT STEP                       #
+######################################
+
+-> working dir _cnt-funCall-main created
+arm-elf-gcc -E funCall.c 
+-> preprocess done
+cdig -counters -oneret   -inline  -f main funCall.cpp 
+-> ref files created
+arm-elf-gcc -O0  -g3 --specs=linux.specs ref_funCall.c  -o ref_funCall.elf
+-> _cnt-funCall-main/ref_funCall.elf created
+-> building ref_funCall.cptr2bb
+-> ref_funCall.cptr2bb done
+-----------------------
+-> cleaning counters in ref_funCall.cptr2bb with 
+->  done
+-----------------------
+Traceability: 100% blocks traced (3 out of 3)
+
+######################################
+#    BOUNDS STEP                     #
+######################################
+
+arg="_cnt-funCall-main"
+arg=""
+DO_ORANGE=false
+NO_PRAGMA=false
+BASE=funCall
+FUNC=main
+-> (mkff) ffx done
+/usr/local/tools/lustre/misc/w7/bin/arm.looploc
+ref_funCall.looploc
+fixffx -i ref_funCall.mkffx ref_funCall.looploc /usr/local/tools/lustre/misc/w7/bin/arm.looploc  -v
+code=0
+code=0
+#WARNING: NO BOUNDS for line ref_funCall.c:138
+#WARNING: NO BOUNDS for line ref_funCall.c:147
+-> (fixffx) ffx done
+
+######################################
+#    OWCET STEP                      #
+######################################
+
+BASE=funCall
+FUNC=main
+-> add "ref_funCall.fixed.ffx" to flow facts
+-> will use  -f ref_funCall.fixed.ffx
+owcet -s /usr/local/tools/lustre/misc/w7/share/lpc2138-w7.osx --add-prop otawa::ilp::OUTPUT_PATH=ref_funCall.lp -f ref_funCall.fixed.ffx ref_funCall.elf main
+                                         ELAPSED TIME (OWCET): 0:00.05
+
+######################################
+#    PAGAI STEP                      #
+######################################
+
+ODIR=_cnt-funCall-main
+PAGAI_OPTS=
+BASE=funCall
+FUNC=main
+THIS IS DEBUG PRINTING
+// ResourceDir is /lib/clang/3.4
+// analysis: AIopt
+/* processing Function main */
+-> pagai done
+--------------------
+-> (re) building ref_funCall.cptr2bb
+cptr_main_1 140 main 4
+cptr_main_2 149 main 7
+cptr_main_3 172 main 10
+-> ref_funCall.cptr2bb done
+-----------------------
+treat_other "ref_funCall.cptr2bb"
+#pagai2lp: cptr2bb file set to "ref_funCall.cptr2bb"
+treat_other "cptr_ref_funCall.pagai.c"
+#pagai2lp: pagai c file set to "cptr_ref_funCall.pagai.c"
+treat_other "main"
+#pagai2lp: function name set to "main"
+
+# pagai2lp, all invariants in func main:
+cptr_main_2 -10 = 0;
+cptr_main_1 -10 = 0;
+
+# pagai2lp, normalized invariants in func main:
+cptr_main_2 = 10;
+cptr_main_1 = 10;
+
+# INVARIANTS (as src lines)
+line_149 = 10;
+line_140 = 10;
+
+# INVARIANTS (as basic blocks)
+x7_main = 10;
+x4_main = 10;
+ELAPSED TIME (PAGAI): 0:00.12
+
+######################################
+#    LP (FINAL) STEP                 #
+######################################
+
+#--- BOUNDS STEP SUMMARY -----
+#WARNING: NO BOUNDS for line ref_funCall.c:138
+#WARNING: NO BOUNDS for line ref_funCall.c:147
+BASE=funCall
+FUNC=main
+# WARNING: "lp_solve_int -S1 ref_funCall.lp" failed
+Traceability: 100% blocks traced (3 out of 3)
+Elapsed time in owcet: 0:00.05
+Elapsed time in pagai: 0:00.12
+Estimation WITHOUT PAGAI: "This problem is unbounded"
+Estimation WITH    PAGAI: "523"

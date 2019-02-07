@@ -1,0 +1,9 @@
+x13_main = cnt_xtra_x -8;
+x15_main = 1;
+x11_main = 0;
+x19_main = 0;
+x17_main = 1;
+x9_main = 1;
+x4_main = 10;
+cnt_xtra_x <= 9;
+cnt_xtra_x >= 8;

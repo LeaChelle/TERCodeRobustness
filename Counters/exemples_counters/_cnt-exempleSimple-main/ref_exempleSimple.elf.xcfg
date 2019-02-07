@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cfg-collection>
+  <cfg id="_0" address="_0" label="main" number="0">
+    <property identifier="otawa::INDEX">0</property>
+    <property identifier="otawa::LABEL">main</property>
+    <entry id="_0-0"/>
+    <bb id="_0-1" address="00008178" size="28" number="1">
+      <property identifier="otawa::INDEX">1</property>
+      <property identifier="otawa::ENTRY">main</property>
+      <inst address="00008178" file="ref_exempleSimple.c" line="20"/>
+      <inst address="0000817c" file="ref_exempleSimple.c" line="20"/>
+      <inst address="00008180" file="ref_exempleSimple.c" line="20"/>
+      <inst address="00008184" file="ref_exempleSimple.c" line="26"/>
+      <inst address="00008188" file="ref_exempleSimple.c" line="26"/>
+      <inst address="0000818c" file="ref_exempleSimple.c" line="27"/>
+      <inst address="00008190" file="ref_exempleSimple.c" line="27"/>
+    </bb>
+    <bb id="_0-2" address="00008194" size="24" number="2">
+      <property identifier="otawa::INDEX">2</property>
+      <inst address="00008194" file="ref_exempleSimple.c" line="27"/>
+      <inst address="00008198" file="ref_exempleSimple.c" line="27"/>
+      <inst address="0000819c" file="ref_exempleSimple.c" line="28"/>
+      <inst address="000081a0" file="ref_exempleSimple.c" line="30"/>
+      <inst address="000081a4" file="ref_exempleSimple.c" line="30"/>
+      <inst address="000081a8" file="ref_exempleSimple.c" line="30"/>
+    </bb>
+    <exit id="_0-3"/>
+    <edge kind="virtual" source="_0-0" target="_0-1"/>
+    <edge kind="call" source="_0-1" called="_1"/>
+    <edge kind="not-taken" source="_0-1" target="_0-2"/>
+    <edge kind="virtual" source="_0-2" target="_0-3"/>
+  </cfg>
+  <cfg id="_1" address="_1" label="exempleTest" number="1">
+    <property identifier="otawa::INDEX">1</property>
+    <property identifier="otawa::LABEL">exempleTest</property>
+    <property identifier="otawa::CALLED_BY">BB 1 (00008178) -> cfg(exempleTest) (call)&gt;cfg(exempleTest) (call)</property>
+    <property identifier="otawa::CALLED_BY">BB 1 (00008178) -> cfg(exempleTest) (call)&gt;cfg(exempleTest) (call)</property>
+    <entry id="_1-0"/>
+    <bb id="_1-1" address="00008134" size="28" number="1">
+      <property identifier="otawa::INDEX">1</property>
+      <property identifier="otawa::ENTRY">exempleTest</property>
+      <inst address="00008134" file="ref_exempleSimple.c" line="5"/>
+      <inst address="00008138" file="ref_exempleSimple.c" line="5"/>
+      <inst address="0000813c" file="ref_exempleSimple.c" line="5"/>
+      <inst address="00008140" file="ref_exempleSimple.c" line="5"/>
+      <inst address="00008144" file="ref_exempleSimple.c" line="9"/>
+      <inst address="00008148" file="ref_exempleSimple.c" line="9"/>
+      <inst address="0000814c" file="ref_exempleSimple.c" line="9"/>
+    </bb>
+    <bb id="_1-2" address="00008150" size="12" number="2">
+      <property identifier="otawa::INDEX">2</property>
+      <inst address="00008150" file="ref_exempleSimple.c" line="11"/>
+      <inst address="00008154" file="ref_exempleSimple.c" line="11"/>
+      <inst address="00008158" file="ref_exempleSimple.c" line="11"/>
+    </bb>
+    <bb id="_1-3" address="0000815c" size="8" number="3">
+      <property identifier="otawa::INDEX">3</property>
+      <inst address="0000815c" file="ref_exempleSimple.c" line="14"/>
+      <inst address="00008160" file="ref_exempleSimple.c" line="14"/>
+    </bb>
+    <bb id="_1-4" address="00008164" size="20" number="4">
+      <property identifier="otawa::INDEX">4</property>
+      <inst address="00008164" file="ref_exempleSimple.c" line="16"/>
+      <inst address="00008168" file="ref_exempleSimple.c" line="18"/>
+      <inst address="0000816c" file="ref_exempleSimple.c" line="18"/>
+      <inst address="00008170" file="ref_exempleSimple.c" line="18"/>
+      <inst address="00008174" file="ref_exempleSimple.c" line="18"/>
+    </bb>
+    <exit id="_1-5"/>
+    <edge kind="virtual" source="_1-0" target="_1-1"/>
+    <edge kind="taken" source="_1-1" target="_1-3"/>
+    <edge kind="not-taken" source="_1-1" target="_1-2"/>
+    <edge kind="taken" source="_1-2" target="_1-4"/>
+    <edge kind="not-taken" source="_1-3" target="_1-4"/>
+    <edge kind="virtual" source="_1-4" target="_1-5"/>
+  </cfg>
+</cfg-collection>

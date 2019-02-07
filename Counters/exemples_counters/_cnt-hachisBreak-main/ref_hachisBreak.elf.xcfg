@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<cfg-collection>
+  <cfg id="_0" address="_0" label="main" number="0">
+    <property identifier="otawa::INDEX">0</property>
+    <property identifier="otawa::LABEL">main</property>
+    <entry id="_0-0"/>
+    <bb id="_0-1" address="00008134" size="48" number="1">
+      <property identifier="otawa::INDEX">1</property>
+      <property identifier="otawa::ENTRY">main</property>
+      <inst address="00008134" file="ref_hachisBreak.c" line="5"/>
+      <inst address="00008138" file="ref_hachisBreak.c" line="5"/>
+      <inst address="0000813c" file="ref_hachisBreak.c" line="5"/>
+      <inst address="00008140" file="ref_hachisBreak.c" line="14"/>
+      <inst address="00008144" file="ref_hachisBreak.c" line="14"/>
+      <inst address="00008148" file="ref_hachisBreak.c" line="15"/>
+      <inst address="0000814c" file="ref_hachisBreak.c" line="15"/>
+      <inst address="00008150" file="ref_hachisBreak.c" line="16"/>
+      <inst address="00008154" file="ref_hachisBreak.c" line="16"/>
+      <inst address="00008158" file="ref_hachisBreak.c" line="17"/>
+      <inst address="0000815c" file="ref_hachisBreak.c" line="17"/>
+      <inst address="00008160" file="ref_hachisBreak.c" line="18"/>
+    </bb>
+    <bb id="_0-2" address="00008194" size="12" number="2">
+      <property identifier="otawa::INDEX">2</property>
+      <inst address="00008194" file="ref_hachisBreak.c" line="18"/>
+      <inst address="00008198" file="ref_hachisBreak.c" line="18"/>
+      <inst address="0000819c" file="ref_hachisBreak.c" line="18"/>
+    </bb>
+    <bb id="_0-3" address="000081a0" size="12" number="3">
+      <property identifier="otawa::INDEX">3</property>
+      <inst address="000081a0" file="ref_hachisBreak.c" line="23"/>
+      <inst address="000081a4" file="ref_hachisBreak.c" line="23"/>
+      <inst address="000081a8" file="ref_hachisBreak.c" line="24"/>
+    </bb>
+    <bb id="_0-4" address="00008164" size="48" number="4">
+      <property identifier="otawa::INDEX">4</property>
+      <inst address="00008164" file="ref_hachisBreak.c" line="20"/>
+      <inst address="00008168" file="ref_hachisBreak.c" line="20"/>
+      <inst address="0000816c" file="ref_hachisBreak.c" line="20"/>
+      <inst address="00008170" file="ref_hachisBreak.c" line="20"/>
+      <inst address="00008174" file="ref_hachisBreak.c" line="20"/>
+      <inst address="00008178" file="ref_hachisBreak.c" line="20"/>
+      <inst address="0000817c" file="ref_hachisBreak.c" line="20"/>
+      <inst address="00008180" file="ref_hachisBreak.c" line="20"/>
+      <inst address="00008184" file="ref_hachisBreak.c" line="20"/>
+      <inst address="00008188" file="ref_hachisBreak.c" line="21"/>
+      <inst address="0000818c" file="ref_hachisBreak.c" line="21"/>
+      <inst address="00008190" file="ref_hachisBreak.c" line="21"/>
+    </bb>
+    <bb id="_0-5" address="0000822c" size="12" number="5">
+      <property identifier="otawa::INDEX">5</property>
+      <inst address="0000822c" file="ref_hachisBreak.c" line="24"/>
+      <inst address="00008230" file="ref_hachisBreak.c" line="24"/>
+      <inst address="00008234" file="ref_hachisBreak.c" line="24"/>
+    </bb>
+    <bb id="_0-6" address="00008238" size="4" number="6">
+      <property identifier="otawa::INDEX">6</property>
+      <inst address="00008238" file="ref_hachisBreak.c" line="24"/>
+    </bb>
+    <bb id="_0-7" address="000081ac" size="12" number="7">
+      <property identifier="otawa::INDEX">7</property>
+      <inst address="000081ac" file="ref_hachisBreak.c" line="25"/>
+      <inst address="000081b0" file="ref_hachisBreak.c" line="25"/>
+      <inst address="000081b4" file="ref_hachisBreak.c" line="25"/>
+    </bb>
+    <bb id="_0-8" address="00008240" size="12" number="8">
+      <property identifier="otawa::INDEX">8</property>
+      <inst address="00008240" file="ref_hachisBreak.c" line="44"/>
+      <inst address="00008244" file="ref_hachisBreak.c" line="44"/>
+      <inst address="00008248" file="ref_hachisBreak.c" line="44"/>
+    </bb>
+    <bb id="_0-9" address="000081b8" size="24" number="9">
+      <property identifier="otawa::INDEX">9</property>
+      <inst address="000081b8" file="ref_hachisBreak.c" line="27"/>
+      <inst address="000081bc" file="ref_hachisBreak.c" line="27"/>
+      <inst address="000081c0" file="ref_hachisBreak.c" line="27"/>
+      <inst address="000081c4" file="ref_hachisBreak.c" line="28"/>
+      <inst address="000081c8" file="ref_hachisBreak.c" line="28"/>
+      <inst address="000081cc" file="ref_hachisBreak.c" line="28"/>
+    </bb>
+    <bb id="_0-10" address="000081d0" size="32" number="10">
+      <property identifier="otawa::INDEX">10</property>
+      <inst address="000081d0" file="ref_hachisBreak.c" line="30"/>
+      <inst address="000081d4" file="ref_hachisBreak.c" line="30"/>
+      <inst address="000081d8" file="ref_hachisBreak.c" line="30"/>
+      <inst address="000081dc" file="ref_hachisBreak.c" line="30"/>
+      <inst address="000081e0" file="ref_hachisBreak.c" line="30"/>
+      <inst address="000081e4" file="ref_hachisBreak.c" line="30"/>
+      <inst address="000081e8" file="ref_hachisBreak.c" line="30"/>
+      <inst address="000081ec" file="ref_hachisBreak.c" line="30"/>
+    </bb>
+    <bb id="_0-11" address="0000824c" size="8" number="11">
+      <property identifier="otawa::INDEX">11</property>
+      <inst address="0000824c" file="ref_hachisBreak.c" line="46"/>
+      <inst address="00008250" file="ref_hachisBreak.c" line="46"/>
+    </bb>
+    <bb id="_0-12" address="00008254" size="12" number="12">
+      <property identifier="otawa::INDEX">12</property>
+      <inst address="00008254" file="ref_hachisBreak.c" line="48"/>
+      <inst address="00008258" file="ref_hachisBreak.c" line="48"/>
+      <inst address="0000825c" file="ref_hachisBreak.c" line="48"/>
+    </bb>
+    <bb id="_0-13" address="000081f0" size="12" number="13">
+      <property identifier="otawa::INDEX">13</property>
+      <inst address="000081f0" file="ref_hachisBreak.c" line="32"/>
+      <inst address="000081f4" file="ref_hachisBreak.c" line="32"/>
+      <inst address="000081f8" file="ref_hachisBreak.c" line="32"/>
+    </bb>
+    <bb id="_0-14" address="000081fc" size="12" number="14">
+      <property identifier="otawa::INDEX">14</property>
+      <inst address="000081fc" file="ref_hachisBreak.c" line="34"/>
+      <inst address="00008200" file="ref_hachisBreak.c" line="34"/>
+      <inst address="00008204" file="ref_hachisBreak.c" line="34"/>
+    </bb>
+    <bb id="_0-15" address="00008260" size="8" number="15">
+      <property identifier="otawa::INDEX">15</property>
+      <inst address="00008260" file="ref_hachisBreak.c" line="50"/>
+      <inst address="00008264" file="ref_hachisBreak.c" line="50"/>
+    </bb>
+    <bb id="_0-16" address="00008268" size="20" number="16">
+      <property identifier="otawa::INDEX">16</property>
+      <inst address="00008268" file="ref_hachisBreak.c" line="52"/>
+      <inst address="0000826c" file="ref_hachisBreak.c" line="54"/>
+      <inst address="00008270" file="ref_hachisBreak.c" line="54"/>
+      <inst address="00008274" file="ref_hachisBreak.c" line="54"/>
+      <inst address="00008278" file="ref_hachisBreak.c" line="54"/>
+    </bb>
+    <bb id="_0-17" address="00008208" size="12" number="17">
+      <property identifier="otawa::INDEX">17</property>
+      <inst address="00008208" file="ref_hachisBreak.c" line="36"/>
+      <inst address="0000820c" file="ref_hachisBreak.c" line="36"/>
+      <inst address="00008210" file="ref_hachisBreak.c" line="36"/>
+    </bb>
+    <bb id="_0-18" address="00008214" size="12" number="18">
+      <property identifier="otawa::INDEX">18</property>
+      <inst address="00008214" file="ref_hachisBreak.c" line="38"/>
+      <inst address="00008218" file="ref_hachisBreak.c" line="38"/>
+      <inst address="0000821c" file="ref_hachisBreak.c" line="38"/>
+    </bb>
+    <bb id="_0-19" address="00008220" size="12" number="19">
+      <property identifier="otawa::INDEX">19</property>
+      <inst address="00008220" file="ref_hachisBreak.c" line="42"/>
+      <inst address="00008224" file="ref_hachisBreak.c" line="42"/>
+      <inst address="00008228" file="ref_hachisBreak.c" line="42"/>
+    </bb>
+    <bb id="_0-20" address="0000823c" size="4" number="20">
+      <property identifier="otawa::INDEX">20</property>
+      <inst address="0000823c" file="ref_hachisBreak.c" line="39"/>
+    </bb>
+    <exit id="_0-21"/>
+    <edge kind="virtual" source="_0-0" target="_0-1"/>
+    <edge kind="taken" source="_0-1" target="_0-2"/>
+    <edge kind="taken" source="_0-2" target="_0-4"/>
+    <edge kind="not-taken" source="_0-2" target="_0-3"/>
+    <edge kind="taken" source="_0-3" target="_0-5"/>
+    <edge kind="not-taken" source="_0-4" target="_0-2"/>
+    <edge kind="taken" source="_0-5" target="_0-7"/>
+    <edge kind="not-taken" source="_0-5" target="_0-6"/>
+    <edge kind="taken" source="_0-6" target="_0-8"/>
+    <edge kind="taken" source="_0-7" target="_0-10"/>
+    <edge kind="not-taken" source="_0-7" target="_0-9"/>
+    <edge kind="taken" source="_0-8" target="_0-12"/>
+    <edge kind="not-taken" source="_0-8" target="_0-11"/>
+    <edge kind="not-taken" source="_0-9" target="_0-10"/>
+    <edge kind="taken" source="_0-10" target="_0-14"/>
+    <edge kind="not-taken" source="_0-10" target="_0-13"/>
+    <edge kind="not-taken" source="_0-11" target="_0-12"/>
+    <edge kind="taken" source="_0-12" target="_0-16"/>
+    <edge kind="not-taken" source="_0-12" target="_0-15"/>
+    <edge kind="not-taken" source="_0-13" target="_0-14"/>
+    <edge kind="taken" source="_0-14" target="_0-18"/>
+    <edge kind="not-taken" source="_0-14" target="_0-17"/>
+    <edge kind="not-taken" source="_0-15" target="_0-16"/>
+    <edge kind="virtual" source="_0-16" target="_0-21"/>
+    <edge kind="not-taken" source="_0-17" target="_0-18"/>
+    <edge kind="taken" source="_0-18" target="_0-20"/>
+    <edge kind="not-taken" source="_0-18" target="_0-19"/>
+    <edge kind="not-taken" source="_0-19" target="_0-5"/>
+    <edge kind="not-taken" source="_0-20" target="_0-8"/>
+  </cfg>
+</cfg-collection>
